@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Parcial 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Música</h1>
+            </div>
+        </div>
+        <div class="row"  id="contenedorCanciones">
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="contenidoModal1"></div>
+                <div class="modal-body" id="contenidoModal2"></div>
+                <div class="modal-body" id="contenidoModal3"></div>
+                <div class="modal-body" id="contenidoModal4"></div>
+                <div class="modal-body" id="contenidoModal5"></div>
+                <div class="modal-body" id="contenidoModal6"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script>
+        function cargarJSON(url) {
+            return fetch(url)
+                .then(response => response.json())
+        }
+        Promise.all([cargarJSON('MUSICA/iwannabeyours.json'), cargarJSON('MUSICA/pride.json'), cargarJSON('MUSICA/stargazing.json'), cargarJSON('MUSICA/takemetochurch.json'), cargarJSON('MUSICA/mykindofwoman.json'), cargarJSON('MUSICA/badhabit.json'), cargarJSON('MUSICA/lover.json'), cargarJSON('MUSICA/videogames.json'), cargarJSON('MUSICA/selfcare.json'), cargarJSON('MUSICA/redbone.json'), cargarJSON('MUSICA/clocks.json'), cargarJSON('MUSICA/cigarettedaydreams.json'), cargarJSON('MUSICA/pinkwhite.json'), cargarJSON('MUSICA/cardigan.json'), cargarJSON('MUSICA/countmeout.json'), cargarJSON('MUSICA/babydoll.json'), cargarJSON('MUSICA/she.json'), cargarJSON('MUSICA/heather.json'), cargarJSON('MUSICA/stressedout.json'), cargarJSON('MUSICA/ribs.json') ])
+            .then(dataArray => {
+                const cancion1 = dataArray[0];
+                const cancion2 = dataArray[1];
+                const cancion3 = dataArray[2];
+                const cancion4 = dataArray[3];
+                const cancion5 = dataArray[4];
+                const cancion6 = dataArray[5];
+                const cancion7 = dataArray[6];
+                const cancion8 = dataArray[7];
+                const cancion9 = dataArray[8];
+                const cancion10 = dataArray[9];
+                const cancion11 = dataArray[10];
+                const cancion12 = dataArray[11];
+                const cancion13 = dataArray[12];
+                const cancion14 = dataArray[13];
+                const cancion15 = dataArray[14];
+                const cancion16 = dataArray[15];
+                const cancion17 = dataArray[16];
+                const cancion18 = dataArray[17];
+                const cancion19 = dataArray[18];
+                const cancion20 = dataArray[19];
+
+
+                let contenedorCanciones = document.getElementById("contenedorCanciones");
+                
+                function verDetalles(cancion) {
+                    let NombreModal = document.getElementById("exampleModalLabel");
+                    NombreModal.textContent = cancion.nombre;
+                    let contenidoModal1 = document.getElementById("contenidoModal1");
+                    contenidoModal1.textContent = "Genero: "+cancion.genero;
+                    let contenidoModal2 = document.getElementById("contenidoModal2");
+                    contenidoModal2.textContent = "Compositores: "+cancion.compositores;
+                    let contenidoModal3 = document.getElementById("contenidoModal3");
+                    contenidoModal3.textContent = "Album: "+cancion.album;
+                    let contenidoModal4 = document.getElementById("contenidoModal4");
+                    contenidoModal4.textContent = "Disquera: "+cancion.disquera;
+                    let contenidoModal5 = document.getElementById("contenidoModal5");
+                    contenidoModal5.textContent = "Nacionalidad Artista: "+cancion.nacionalidadArtista;
+                    let contenidoModal6 = document.getElementById("contenidoModal6");
+                    contenidoModal5.textContent = "Grammys: "+cancion.grammy;
+                }
+
+                function crearElementoCancion(cancion) {
+                    let divCancion= document.createElement("div");
+                    divCancion.classList.add("card");
+                    divCancion.style.width = "20rem";
+                    divCancion.classList.add("col-md-3"); 
+                    divCancion.classList.add("col-sm-6"); 
+                    divCancion.classList.add("col-xs-12");
+                    divCancion.classList.add("mt-3");  
+                    let imagen = document.createElement("img");
+                    imagen.src = cancion.imagen;
+                    let nombre = document.createElement("h5");
+                    nombre.innerHTML = cancion.nombre;
+                    let artista= document.createElement("p");
+                    artista.innerHTML = "Artista: "+cancion.artista;
+                    let fecha = document.createElement("p");
+                    fecha.innerHTML = "Fecha Lanzamiento: "+cancion.fecha;
+                    let duracion = document.createElement("p");
+                    duracion.innerHTML = "Duración: "+cancion.duracion;
+                    let verMas = document.createElement("button");
+                    verMas.innerHTML = "Ver mas";
+                    verMas.classList.add("btn");
+                    verMas.classList.add("btn-primary");
+                    verMas.setAttribute("data-bs-toggle","modal");
+                    verMas.setAttribute("data-bs-target","#exampleModal");
+                    verMas.addEventListener("click", function() {
+                        verDetalles(cancion);
+                    });
+
+                    divCancion.classList.add("col-3");
+                    divCancion.appendChild(imagen);
+                    divCancion.appendChild(nombre);
+                    divCancion.appendChild(artista);
+                    divCancion.appendChild(fecha);
+                    divCancion.appendChild(duracion);
+                    divCancion.appendChild(verMas);
+
+                    return divCancion;
+                }
+
+                contenedorCanciones.appendChild(crearElementoCancion(cancion1));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion2));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion3));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion4));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion5));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion6));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion7));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion8));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion9));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion10));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion11));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion12));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion13));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion14));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion15));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion16));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion17));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion18));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion19));
+                contenedorCanciones.appendChild(crearElementoCancion(cancion20));
+    
+            });
+    </script>
+</body>
+</html>

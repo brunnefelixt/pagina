@@ -1,0 +1,13 @@
+{
+    "imagen":"IMAGENES/videogames.png",
+    "nombre": "Video Games",
+    "artista": "Lana del Rey",
+	"fecha": "La canción se lanzó en 2011 como sencillo promocional y luego formó parte del álbum Born to Die",
+	"duracion": "Aproximadamente 4 minutos y 46 segundos.",
+	"genero": "Pop, indie pop.",
+	"compositores": "Lana Del Rey, Justin Parker.",	
+    "album": "Born to Die",
+	"disquera": "Interscope Records.",
+    "nacionalidadArtista": "Lana Del Rey es una cantante y compositora estadounidense.",	
+    "grammy": "--"
+}

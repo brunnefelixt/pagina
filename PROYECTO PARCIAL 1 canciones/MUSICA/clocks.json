@@ -1,0 +1,13 @@
+{
+    "imagen":"IMAGENES/clocks.jpg",
+    "nombre": "Clocks",
+    "artista": "Coldplay",
+	"fecha": "La canción se lanzó el 24 de marzo de 2003 como parte del álbum A Rush of Blood to the Head",
+	"duracion": "Aproximadamente 5 minutos y 7 segundos.",
+	"genero": "Rock alternativo, pop rock",
+	"compositores": "Guy Berryman, Jonny Buckland, Will Champion, Chris Martin (miembros de Coldplay).",	
+    "album": "A Rush of Blood to the Head",
+	"disquera": "Parlophone Records",
+    "nacionalidadArtista": "Coldplay es una banda de rock alternativo originaria del Reino Unido.",	
+    "grammy": "Clocks ganó el Grammy a la Grabación del Año en 2004"
+}

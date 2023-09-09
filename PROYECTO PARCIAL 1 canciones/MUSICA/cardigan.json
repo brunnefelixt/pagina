@@ -1,0 +1,14 @@
+{
+    "imagen":"IMAGENES/cardigan.jpg",
+    "nombre": "cardigan",
+    "artista": "Taylor Swift",
+	"fecha": "24 de julio de 2020",
+	"duracion": "Aproximadamente 4 minutos y 30 segundos",
+	"genero": "Indie folk, pop",
+	"compositores": "Taylor Swift, Aaron Dessner.",	
+    "album": "folklore",
+	"disquera": "Republic Records",
+    "nacionalidadArtista": "Taylor Swift es un músico y compositor estadounidense.",	
+    "grammy": "Album del año, 2020"
+
+}

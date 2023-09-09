@@ -1,0 +1,14 @@
+{
+    "imagen":"IMAGENES/lover.png",
+    "nombre": "Lover",
+    "artista": "Taylor Swift",
+	"fecha": "La canción se lanzó el 16 de agosto de 2019 como parte del álbum del mismo nombre, Lover",
+	"duracion": "Aproximadamente 3 minutos y 41 segundos.",
+	"genero": "Pop.",
+	"compositores": "Taylor Swift",	
+    "album": "Lover",
+	"disquera": "Republic Records.",
+    "nacionalidadArtista": "Taylor Swift es una cantante y compositora estadounidense.",	
+    "grammy": "Taylor Swift ha ganado múltiples premios Grammy a lo largo de su carrera"
+}
+
